@@ -1,0 +1,33 @@
+{% extends "base.html" %} 
+{% block main-content %}
+<div class="flex-grow-1 mb-5 mt-5">
+  <div class="container">
+    <h3 id="latest-news-heading">Kinh doanh</h3>
+    <br>
+    <div class="row">
+      {% for item in item_rss %}
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <a href="{{item.link}}" target="_blank">
+            <img
+              src="{{item.image}}"
+              class="card-img-top custom-image"
+              alt="{{item.title}}"
+            />
+          </a>
+          <div class="card-body custom-box">
+            <a href="{{item.link}}" target="_blank" class="text-dark">
+              <h5 class="card-title">{{item.title}}</h5>
+            </a>
+            <p class="card-text">{{item.description}}</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">{{item.pub_date}}</small>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock main-content %}

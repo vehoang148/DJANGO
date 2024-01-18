@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class CoinGoldConfig(AppConfig):
+class AppConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'coin_gold'
+    name = 'app'

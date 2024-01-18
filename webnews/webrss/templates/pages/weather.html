@@ -1,0 +1,31 @@
+{% extends "base.html" %} 
+{% block main-content %}
+<block>
+
+    <center class="row">
+        <form method="post" class="col-md-6 col-md-offset-3">
+          {% csrf_token %}
+          <div class="input-group">
+            <input type="text" class="form-control" name="city" placeholder="Search">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+            <form>
+      </center>
+      <div class="row">
+        {% if country_code and coordinate and temp and pressure and humidity %}
+        <div class="col-md-6 col-md-offset-3">
+            <h1>Thành Phố : {{name}} - {{country_code}}</h1>
+            <h5>Tọa độ : {{coordinate}}</h5>
+            <h5>Nhiệt độ : {{temp}}</h5>
+            <h5>Áp suất : {{pressure}} </h5>
+            <h5>Độ ẩm : {{humidity}}</h5>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+</block>
+
+{% endblock main-content %}
